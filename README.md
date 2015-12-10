@@ -1,6 +1,6 @@
-## AhaGesturePasswordView
+## AhaLineTableViewCell
 
-只提供了手势密码的绘制工作，密码的其他逻辑工作，需要自行处理。
+UITableViewCell 自定义分割线。颜色、高度、是否隐藏。
 
 * Demo
 
