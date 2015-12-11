@@ -1,6 +1,8 @@
 ## AhaLineTableViewCell
 
-UITableViewCell 自定义分割线。颜色、高度、是否隐藏、offsetX。
+UITableView 自带的分隔线总是很难满足需求。所以设置成`UITableViewCellSeparatorStyleNone`，然后自定义分隔线。
+
+* UITableViewCell 自定义分隔线。颜色、高度、是否隐藏、offsetX。
 
 * Demo
 
