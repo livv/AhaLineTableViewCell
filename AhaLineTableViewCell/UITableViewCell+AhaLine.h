@@ -13,6 +13,7 @@
 - (void)aha_setLineColor:(UIColor *)lineColor;
 
 - (void)aha_setLineOffsetX:(CGFloat)offsetX;
+- (void)aha_setLineRightOffsetX:(CGFloat)offsetX;
 
 - (void)aha_setLineHeight:(CGFloat)height;
 

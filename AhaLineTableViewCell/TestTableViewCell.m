@@ -46,7 +46,7 @@
                                             blue:(arc4random() % 255) / 255.0f alpha:1.0]];
     [self aha_setLineOffsetX:arc4random() % 10 * 5];
     [self aha_setLineHeight:(arc4random() % 3 + 1) * (1 / [UIScreen mainScreen].scale)];
-    
+    [self aha_setLineRightOffsetX:arc4random() % 10 * 5];
     [self aha_setLineHidden:hidden];
 }
 

@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UIView *ahaBottomLineView;
 @property (nonatomic, assign) CGFloat bottomLineOffsetX;
+@property (nonatomic, assign) CGFloat bottomLineRightOffsetX;
 @property (nonatomic, assign) CGFloat bottomLineHeight;
 
 @end
@@ -36,6 +37,12 @@
     self.bottomLineOffsetX = offsetX;
 }
 
+- (void)aha_setLineRightOffsetX:(CGFloat)offsetX {
+    
+    [self aha_checkBottomLineView];
+    self.bottomLineRightOffsetX = offsetX;
+}
+
 - (void)aha_setLineHeight:(CGFloat)height {
 
     [self aha_checkBottomLineView];
@@ -55,7 +62,7 @@
     
     self.ahaBottomLineView.frame = CGRectMake(self.bottomLineOffsetX,
                                               self.bounds.size.height - self.bottomLineHeight,
-                                              self.bounds.size.width - self.bottomLineOffsetX,
+                                              self.bounds.size.width - self.bottomLineOffsetX - self.bottomLineRightOffsetX,
                                               self.bottomLineHeight);
 }
 
@@ -87,6 +94,14 @@
 
 - (void)setBottomLineOffsetX:(CGFloat)bottomLineOffsetX {
     objc_setAssociatedObject(self, @selector(bottomLineOffsetX), @(bottomLineOffsetX), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (CGFloat)bottomLineRightOffsetX {
+    return [objc_getAssociatedObject(self, @selector(bottomLineRightOffsetX)) floatValue];
+}
+
+- (void)setBottomLineRightOffsetX:(CGFloat)bottomLineRightOffsetX {
+    objc_setAssociatedObject(self, @selector(bottomLineRightOffsetX), @(bottomLineRightOffsetX), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (CGFloat)bottomLineHeight {
