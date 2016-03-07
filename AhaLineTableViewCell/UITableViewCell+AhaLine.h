@@ -11,12 +11,12 @@
 @interface UITableViewCell (AhaLine)
 
 - (void)aha_setLineColor:(UIColor *)lineColor;
+- (void)aha_setLineHeight:(CGFloat)lineHeight;
 
-- (void)aha_setLineOffsetX:(CGFloat)offsetX;
-- (void)aha_setLineRightOffsetX:(CGFloat)offsetX;
+- (void)aha_setLineLeftSpace:(CGFloat)leftSpace;
+- (void)aha_setLineRightSpace:(CGFloat)rightSpace;
 
-- (void)aha_setLineHeight:(CGFloat)height;
-
-- (void)aha_setLineHidden:(BOOL)hidden;
+- (void)aha_setTopLineHidden:(BOOL)hidden;
+- (void)aha_setBottomLineHidden:(BOOL)hidden;
 
 @end

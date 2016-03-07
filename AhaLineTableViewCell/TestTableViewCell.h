@@ -12,6 +12,6 @@
 
 + (UINib *)nib;
 + (NSString *)cellIdentifier;
-- (void)config:(BOOL)hidden;
+- (void)setTitleStr:(NSString *)title;
 
 @end

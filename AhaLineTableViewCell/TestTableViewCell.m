@@ -8,18 +8,21 @@
 
 #import "TestTableViewCell.h"
 #import "UITableViewCell+AhaLine.h"
+#import "Common.h"
+
+@interface TestTableViewCell ()
+
+@property (nonatomic, weak) IBOutlet UILabel * titleLabel;
+
+@end
 
 @implementation TestTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
     
-    //一次性设置
-    [self aha_setLineColor:[UIColor colorWithRed:(arc4random() % 255) / 255.0f
-                                           green:(arc4random() % 255) / 255.0f
-                                            blue:(arc4random() % 255) / 255.0f alpha:1.0]];
-    [self aha_setLineOffsetX:arc4random() % 10 * 5];
-    [self aha_setLineHeight:(arc4random() % 3 + 1) * (1 / [UIScreen mainScreen].scale)];
+    self.backgroundColor = UIColorFromHEX(0xfafafa);
+    [self aha_setLineColor:UIColorFromHEX(0xdddddd)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -38,16 +41,9 @@
     return NSStringFromClass([TestTableViewCell class]);
 }
 
-- (void)config:(BOOL)hidden {
-    
-    //动态设置
-    [self aha_setLineColor:[UIColor colorWithRed:(arc4random() % 255) / 255.0f
-                                           green:(arc4random() % 255) / 255.0f
-                                            blue:(arc4random() % 255) / 255.0f alpha:1.0]];
-    [self aha_setLineOffsetX:arc4random() % 10 * 5];
-    [self aha_setLineHeight:(arc4random() % 3 + 1) * (1 / [UIScreen mainScreen].scale)];
-    [self aha_setLineRightOffsetX:arc4random() % 10 * 5];
-    [self aha_setLineHidden:hidden];
+- (void)setTitleStr:(NSString *)title {
+
+    self.titleLabel.text = title;
 }
 
 @end

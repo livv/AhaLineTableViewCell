@@ -13,9 +13,11 @@
 @interface UITableViewCell ()
 
 @property (nonatomic, strong) UIView *ahaBottomLineView;
-@property (nonatomic, assign) CGFloat bottomLineOffsetX;
-@property (nonatomic, assign) CGFloat bottomLineRightOffsetX;
-@property (nonatomic, assign) CGFloat bottomLineHeight;
+@property (nonatomic, strong) UIView *ahaTopLineView;
+
+@property (nonatomic, assign) CGFloat ahaLeftSpace;
+@property (nonatomic, assign) CGFloat ahaRightSpace;
+@property (nonatomic, assign) CGFloat ahaLineHeight;
 
 @end
 
@@ -29,28 +31,35 @@
     
     [self aha_checkBottomLineView];
     self.ahaBottomLineView.backgroundColor = lineColor;
+    self.ahaTopLineView.backgroundColor = lineColor;
 }
 
-- (void)aha_setLineOffsetX:(CGFloat)offsetX {
-
-    [self aha_checkBottomLineView];
-    self.bottomLineOffsetX = offsetX;
-}
-
-- (void)aha_setLineRightOffsetX:(CGFloat)offsetX {
+- (void)aha_setLineHeight:(CGFloat)lineHeight {
     
     [self aha_checkBottomLineView];
-    self.bottomLineRightOffsetX = offsetX;
+    self.ahaLineHeight = lineHeight;
 }
 
-- (void)aha_setLineHeight:(CGFloat)height {
-
-    [self aha_checkBottomLineView];
-    self.bottomLineHeight = height;
-}
-
-- (void)aha_setLineHidden:(BOOL)hidden {
+- (void)aha_setLineLeftSpace:(CGFloat)leftSpace {
     
+    [self aha_checkBottomLineView];
+    self.ahaLeftSpace = leftSpace;
+}
+
+- (void)aha_setLineRightSpace:(CGFloat)rightSpace {
+    
+    [self aha_checkBottomLineView];
+    self.ahaRightSpace = rightSpace;
+}
+
+- (void)aha_setTopLineHidden:(BOOL)hidden {
+    
+    [self aha_checkBottomLineView];
+    self.ahaTopLineView.hidden = hidden;
+}
+
+- (void)aha_setBottomLineHidden:(BOOL)hidden {
+   
     [self aha_checkBottomLineView];
     self.ahaBottomLineView.hidden = hidden;
 }
@@ -60,22 +69,33 @@
 
 - (void)aha_layoutSubviews {
     
-    self.ahaBottomLineView.frame = CGRectMake(self.bottomLineOffsetX,
-                                              self.bounds.size.height - self.bottomLineHeight,
-                                              self.bounds.size.width - self.bottomLineOffsetX - self.bottomLineRightOffsetX,
-                                              self.bottomLineHeight);
+    self.ahaTopLineView.frame = CGRectMake(0,
+                                           0,
+                                           self.bounds.size.width,
+                                           self.ahaLineHeight);
+    
+    self.ahaBottomLineView.frame = CGRectMake(self.ahaLeftSpace,
+                                              self.bounds.size.height - self.ahaLineHeight,
+                                              self.bounds.size.width - self.ahaLeftSpace - self.ahaRightSpace,
+                                              self.ahaLineHeight);
+    
 }
 
 - (void)aha_checkBottomLineView {
     
     if (!self.ahaBottomLineView) {
         
-        self.bottomLineOffsetX = 0.0f;
-        self.bottomLineHeight = (1 / [UIScreen mainScreen].scale);
+        self.ahaLeftSpace = 0.0f;
+        self.ahaLineHeight = (1 / [UIScreen mainScreen].scale);
         
         self.ahaBottomLineView = [[UIView alloc] init];
         self.ahaBottomLineView.backgroundColor = [UIColor darkGrayColor];
         [self.contentView addSubview:self.ahaBottomLineView];
+        
+        self.ahaTopLineView = [[UIView alloc] init];
+        self.ahaTopLineView.backgroundColor = [UIColor darkGrayColor];
+        [self.contentView addSubview:self.ahaTopLineView];
+        self.ahaTopLineView.hidden = YES;
         
         [self aspect_hookSelector:@selector(layoutSubviews)
                       withOptions:AspectPositionAfter
@@ -88,28 +108,28 @@
 
 #pragma mark- getters & setters
 
-- (CGFloat)bottomLineOffsetX {
-    return [objc_getAssociatedObject(self, @selector(bottomLineOffsetX)) floatValue];
+- (CGFloat)ahaLeftSpace {
+    return [objc_getAssociatedObject(self, @selector(ahaLeftSpace)) floatValue];
 }
 
-- (void)setBottomLineOffsetX:(CGFloat)bottomLineOffsetX {
-    objc_setAssociatedObject(self, @selector(bottomLineOffsetX), @(bottomLineOffsetX), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setAhaLeftSpace:(CGFloat)ahaLeftSpace {
+    objc_setAssociatedObject(self, @selector(ahaLeftSpace), @(ahaLeftSpace), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)bottomLineRightOffsetX {
-    return [objc_getAssociatedObject(self, @selector(bottomLineRightOffsetX)) floatValue];
+- (CGFloat)ahaRightSpace {
+    return [objc_getAssociatedObject(self, @selector(ahaRightSpace)) floatValue];
 }
 
-- (void)setBottomLineRightOffsetX:(CGFloat)bottomLineRightOffsetX {
-    objc_setAssociatedObject(self, @selector(bottomLineRightOffsetX), @(bottomLineRightOffsetX), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setAhaRightSpace:(CGFloat)ahaRightSpace {
+    objc_setAssociatedObject(self, @selector(ahaRightSpace), @(ahaRightSpace), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)bottomLineHeight {
-    return [objc_getAssociatedObject(self, @selector(bottomLineHeight)) floatValue];
+- (CGFloat)ahaLineHeight {
+    return [objc_getAssociatedObject(self, @selector(ahaLineHeight)) floatValue];
 }
 
-- (void)setBottomLineHeight:(CGFloat)bottomLineHeight {
-    objc_setAssociatedObject(self, @selector(bottomLineHeight), @(bottomLineHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setAhaLineHeight:(CGFloat)ahaLineHeight {
+    objc_setAssociatedObject(self, @selector(ahaLineHeight), @(ahaLineHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIView *)ahaBottomLineView {
@@ -118,6 +138,14 @@
 
 - (void)setAhaBottomLineView:(UIView *)ahaBottomLineView {
     objc_setAssociatedObject(self, @selector(ahaBottomLineView), ahaBottomLineView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIView *)ahaTopLineView {
+    return objc_getAssociatedObject(self, @selector(ahaTopLineView));
+}
+
+- (void)setAhaTopLineView:(UIView *)ahaTopLineView {
+    objc_setAssociatedObject(self, @selector(ahaTopLineView), ahaTopLineView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 
