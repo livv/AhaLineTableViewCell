@@ -21,6 +21,6 @@ pod "AhaLineTableViewCell", "~> 1.0.0"
 
 #### Demo
 
-   ![](demo.gif了)
+   ![](demo.gif)
    
 
