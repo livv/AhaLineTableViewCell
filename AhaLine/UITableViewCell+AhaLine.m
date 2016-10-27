@@ -93,6 +93,8 @@
                                               self.bounds.size.width - self.ahaLeftSpace - self.ahaRightSpace,
                                               self.ahaLineHeight);
     
+    [self bringSubviewToFront:self.ahaTopLineView];
+    [self bringSubviewToFront:self.ahaBottomLineView];
 }
 
 - (void)aha_checkBottomLineView {
