@@ -9,11 +9,12 @@
 #import "UITableViewCell+AhaLine.h"
 #import <objc/runtime.h>
 #import <Aspects/Aspects.h>
+#import "AhaLineView.h"
 
 @interface UITableViewCell ()
 
-@property (nonatomic, strong) UIView *ahaBottomLineView;
-@property (nonatomic, strong) UIView *ahaTopLineView;
+@property (nonatomic, strong) AhaLineView *ahaBottomLineView;
+@property (nonatomic, strong) AhaLineView *ahaTopLineView;
 
 @property (nonatomic, assign) CGFloat ahaLeftSpace;
 @property (nonatomic, assign) CGFloat ahaRightSpace;
@@ -27,12 +28,25 @@
 
 #pragma mark - public
 
-- (void)aha_setLineColor:(UIColor *)lineColor {
+- (void)aha_setLineColor:(UIColor *)lineColor selectShowLine:(BOOL)selectShowLine {
     
     [self aha_checkBottomLineView];
-    self.ahaBottomLineView.backgroundColor = lineColor;
-    self.ahaTopLineView.backgroundColor = lineColor;
+    
+    if (selectShowLine) {
+        self.ahaBottomLineView.bgColor = lineColor;
+        self.ahaTopLineView.bgColor = lineColor;
+    } else {
+        self.ahaTopLineView.bgColor = nil;
+        self.ahaBottomLineView.backgroundColor = lineColor;
+        self.ahaTopLineView.backgroundColor = lineColor;
+    }
 }
+
+- (void)aha_setLineColor:(UIColor *)lineColor {
+    
+    [self aha_setLineColor:lineColor selectShowLine:NO];
+}
+
 
 - (void)aha_setLineHeight:(CGFloat)lineHeight {
     
@@ -88,11 +102,11 @@
         self.ahaLeftSpace = 0.0f;
         self.ahaLineHeight = (1 / [UIScreen mainScreen].scale);
         
-        self.ahaBottomLineView = [[UIView alloc] init];
+        self.ahaBottomLineView = [[AhaLineView alloc] init];
         self.ahaBottomLineView.backgroundColor = [UIColor darkGrayColor];
         [self.contentView addSubview:self.ahaBottomLineView];
         
-        self.ahaTopLineView = [[UIView alloc] init];
+        self.ahaTopLineView = [[AhaLineView alloc] init];
         self.ahaTopLineView.backgroundColor = [UIColor darkGrayColor];
         [self.contentView addSubview:self.ahaTopLineView];
         self.ahaTopLineView.hidden = YES;

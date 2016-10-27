@@ -10,6 +10,7 @@
 
 @interface UITableViewCell (AhaLine)
 
+- (void)aha_setLineColor:(UIColor *)lineColor selectShowLine:(BOOL)selectShowLine;
 - (void)aha_setLineColor:(UIColor *)lineColor;
 - (void)aha_setLineHeight:(CGFloat)lineHeight;
 

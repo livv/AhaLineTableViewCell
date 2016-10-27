@@ -51,8 +51,9 @@
     [cell setTitleStr:[NSString stringWithFormat:@"title %ld", (long)indexPath.row]];
     
     
-    [cell aha_setLineColor:UIColorFromHEX(0xdddddd)];
+    [cell aha_setLineColor:UIColorFromHEX(0xdddddd) selectShowLine:NO];
     [cell aha_setLineRightSpace:10];
+    [cell aha_setLineHeight:10];
     [tableView configLineforCell:cell forRowAtIndexPath:indexPath withLeftSpace:20 hasSectionLine:NO];
     
     

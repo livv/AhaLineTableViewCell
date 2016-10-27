@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92E04E36658A41D932E3A04B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EAEF401C1BC6CAAAA96AA1 /* libPods.a */; };
+		B6026C721DC1AE6F004B86CA /* AhaLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6026C711DC1AE6F004B86CA /* AhaLineView.m */; };
 		B6754FBE1C196A710014C80F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6754FBD1C196A710014C80F /* main.m */; };
 		B6754FC11C196A710014C80F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6754FC01C196A710014C80F /* AppDelegate.m */; };
 		B6754FC41C196A710014C80F /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6754FC31C196A710014C80F /* GroupViewController.m */; };
@@ -20,11 +20,14 @@
 		B68619591C8D4DF300A5A4C1 /* PlainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B68619581C8D4DF300A5A4C1 /* PlainViewController.m */; };
 		B686195F1C8D5F2800A5A4C1 /* UITableView+AhaLine.m in Sources */ = {isa = PBXBuildFile; fileRef = B686195C1C8D5F2800A5A4C1 /* UITableView+AhaLine.m */; };
 		B68619601C8D5F2800A5A4C1 /* UITableViewCell+AhaLine.m in Sources */ = {isa = PBXBuildFile; fileRef = B686195E1C8D5F2800A5A4C1 /* UITableViewCell+AhaLine.m */; };
+		B975BBC887C9359E1E228965 /* libPods-AhaLineTableViewCell.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF9248CE44BB007EBDE86B46 /* libPods-AhaLineTableViewCell.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		63EAEF401C1BC6CAAAA96AA1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8522B04649CD5E5EC61D70F4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		482C2C2252110FEE450000F8 /* Pods-AhaLineTableViewCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AhaLineTableViewCell.release.xcconfig"; path = "Pods/Target Support Files/Pods-AhaLineTableViewCell/Pods-AhaLineTableViewCell.release.xcconfig"; sourceTree = "<group>"; };
+		91E03230F831EE2BF75CBBCB /* Pods-AhaLineTableViewCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AhaLineTableViewCell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AhaLineTableViewCell/Pods-AhaLineTableViewCell.debug.xcconfig"; sourceTree = "<group>"; };
+		B6026C701DC1AE6F004B86CA /* AhaLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhaLineView.h; sourceTree = "<group>"; };
+		B6026C711DC1AE6F004B86CA /* AhaLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AhaLineView.m; sourceTree = "<group>"; };
 		B6754FB91C196A710014C80F /* AhaLineTableViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AhaLineTableViewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6754FBD1C196A710014C80F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6754FBF1C196A710014C80F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,7 +50,7 @@
 		B686195C1C8D5F2800A5A4C1 /* UITableView+AhaLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+AhaLine.m"; sourceTree = "<group>"; };
 		B686195D1C8D5F2800A5A4C1 /* UITableViewCell+AhaLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+AhaLine.h"; sourceTree = "<group>"; };
 		B686195E1C8D5F2800A5A4C1 /* UITableViewCell+AhaLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+AhaLine.m"; sourceTree = "<group>"; };
-		FA512A8F269CA58F90B5F9A7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FF9248CE44BB007EBDE86B46 /* libPods-AhaLineTableViewCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AhaLineTableViewCell.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,26 +58,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92E04E36658A41D932E3A04B /* libPods.a in Frameworks */,
+				B975BBC887C9359E1E228965 /* libPods-AhaLineTableViewCell.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		38589F9E984F6AAA543E1EE7 /* Frameworks */ = {
+		4E4D0B28DA3842E1070C4AB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				63EAEF401C1BC6CAAAA96AA1 /* libPods.a */,
+				FF9248CE44BB007EBDE86B46 /* libPods-AhaLineTableViewCell.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		797F1A552CF20070577015F6 /* Pods */ = {
+		54E576F6DA3F6C18B62E737C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8522B04649CD5E5EC61D70F4 /* Pods.debug.xcconfig */,
-				FA512A8F269CA58F90B5F9A7 /* Pods.release.xcconfig */,
+				91E03230F831EE2BF75CBBCB /* Pods-AhaLineTableViewCell.debug.xcconfig */,
+				482C2C2252110FEE450000F8 /* Pods-AhaLineTableViewCell.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -85,8 +88,8 @@
 				B686195A1C8D5F2800A5A4C1 /* AhaLine */,
 				B6754FBB1C196A710014C80F /* AhaLineTableViewCell */,
 				B6754FBA1C196A710014C80F /* Products */,
-				797F1A552CF20070577015F6 /* Pods */,
-				38589F9E984F6AAA543E1EE7 /* Frameworks */,
+				54E576F6DA3F6C18B62E737C /* Pods */,
+				4E4D0B28DA3842E1070C4AB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +140,8 @@
 				B686195C1C8D5F2800A5A4C1 /* UITableView+AhaLine.m */,
 				B686195D1C8D5F2800A5A4C1 /* UITableViewCell+AhaLine.h */,
 				B686195E1C8D5F2800A5A4C1 /* UITableViewCell+AhaLine.m */,
+				B6026C701DC1AE6F004B86CA /* AhaLineView.h */,
+				B6026C711DC1AE6F004B86CA /* AhaLineView.m */,
 			);
 			path = AhaLine;
 			sourceTree = "<group>";
@@ -148,12 +153,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6754FD01C196A710014C80F /* Build configuration list for PBXNativeTarget "AhaLineTableViewCell" */;
 			buildPhases = (
-				AEC95EB4D65F876642EEF219 /* Check Pods Manifest.lock */,
+				EBBDA455D32BA3A4BAAA707A /* [CP] Check Pods Manifest.lock */,
 				B6754FB51C196A710014C80F /* Sources */,
 				B6754FB61C196A710014C80F /* Frameworks */,
 				B6754FB71C196A710014C80F /* Resources */,
-				6A3E03F2EDD3A33EB86B0C73 /* Embed Pods Frameworks */,
-				5320839A0E47FE09B8123ED3 /* Copy Pods Resources */,
+				1D869EBA496C61DD0B82BA1F /* [CP] Embed Pods Frameworks */,
+				C0E05691A6E5F00553735459 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -211,49 +216,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5320839A0E47FE09B8123ED3 /* Copy Pods Resources */ = {
+		1D869EBA496C61DD0B82BA1F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AhaLineTableViewCell/Pods-AhaLineTableViewCell-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A3E03F2EDD3A33EB86B0C73 /* Embed Pods Frameworks */ = {
+		C0E05691A6E5F00553735459 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AhaLineTableViewCell/Pods-AhaLineTableViewCell-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AEC95EB4D65F876642EEF219 /* Check Pods Manifest.lock */ = {
+		EBBDA455D32BA3A4BAAA707A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -265,6 +270,7 @@
 			files = (
 				B6754FC41C196A710014C80F /* GroupViewController.m in Sources */,
 				B6754FD91C196F5C0014C80F /* TestTableViewCell.m in Sources */,
+				B6026C721DC1AE6F004B86CA /* AhaLineView.m in Sources */,
 				B68619601C8D5F2800A5A4C1 /* UITableViewCell+AhaLine.m in Sources */,
 				B68619591C8D4DF300A5A4C1 /* PlainViewController.m in Sources */,
 				B686195F1C8D5F2800A5A4C1 /* UITableView+AhaLine.m in Sources */,
@@ -370,7 +376,7 @@
 		};
 		B6754FD11C196A710014C80F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8522B04649CD5E5EC61D70F4 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 91E03230F831EE2BF75CBBCB /* Pods-AhaLineTableViewCell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AhaLineTableViewCell/Info.plist;
@@ -382,7 +388,7 @@
 		};
 		B6754FD21C196A710014C80F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA512A8F269CA58F90B5F9A7 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 482C2C2252110FEE450000F8 /* Pods-AhaLineTableViewCell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AhaLineTableViewCell/Info.plist;
